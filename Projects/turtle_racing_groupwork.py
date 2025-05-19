@@ -36,9 +36,13 @@ t4 = create_sprite("fish",x4,y4)
 
 # Section 4 - Racing
 for i in range(30):
+# x1 goes ten spaces
 	x1 += 10
+# x2 goes 14 spaces
 	x2 += 14
+# x3 goes 10-20 spaces
 	x3 += random.randint(10,20)
+# x4 goes 0-20 spaces
 	x4 += random.randint(0,20)
 	t1.goto(x1, y1)
 	t2.goto(x2, y2)

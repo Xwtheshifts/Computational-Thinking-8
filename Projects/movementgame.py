@@ -26,35 +26,55 @@ window.tracer(0)
 
 # Section 2: Setup
 # TODO - create your player character
-s1 = create_sprite("lamine", 0, 0)
-s1.set_size(0.5)
+s1 = create_sprite("image", -100, 100)
+s2 = create_sprite("download", 100, -100)
 # TODO - set your background
-set_background("moon")
+set_background("soccerfield")
 # TODO - set the starting value for your variable
 
 # Section 3: Controls
 # TODO - define your controls
 def move_up():
 	s1.setheading(90)
-	s1.forward(10)
+	s1.forward(20)
    	 
 def move_down():
 	s1.setheading(270)
-	s1.forward(10)
+	s1.forward(20)
     
 def move_left():
 	s1.setheading(180)
-	s1.forward(10)
+	s1.forward(20)
     
 def move_right():    
 	s1.setheading(0)
-	s1.forward(10)
+	s1.forward(20)
+
+def move_up2():
+	s2.setheading(90)
+	s2.forward(20)
+   	 
+def move_down2():
+	s2.setheading(270)
+	s2.forward(20)
+    
+def move_left2():
+	s2.setheading(180)
+	s2.forward(20)
+    
+def move_right2():    
+	s2.setheading(0)
+	s2.forward(20)
 
 # TODO - pick keys for each control
 window.onkeypress(move_up, "w")
+window.onkeypress(move_up2, "Up")
 window.onkeypress(move_down, "s")
+window.onkeypress(move_down2, "Down")
 window.onkeypress(move_left, "a")
+window.onkeypress(move_left2, "Left")
 window.onkeypress(move_right, "d")
+window.onkeypress(move_right2, "Right")
 
 # Section 4: Game Loop
 window.listen()
@@ -74,7 +94,8 @@ while True:
 	window.update()
 
 	# if :
-	# 	break
+	if get_distance(s1,s2)<50:
+	 	break
 	
 
 print("Game Over")
